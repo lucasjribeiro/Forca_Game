@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forca</title>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="content">
+                <label for="secretWord" class="wordTitle">Digite a palavra secreta:</label>
+                <input type="text" id="secretWord" required>
+            </div>
+            <label class="textLevel">Escolha o Nível de Dificuldade:</label>
+            <div>
+                <input type="radio" name="level" id="facil" value="facil">
+                <label for="facil" class="opt">Fácil</label>
+            </div>
+            <div>
+                <input type="radio" name="level" id="medio" value="medio">
+                <label for="medio" class="opt">Médio</label>
+            </div>
+            <div>
+                <input type="radio" name="level" id="dificil" value="dificil">
+                <label for="dificil" class="opt">Difício</label>
+            </div>
+            <div>
+                <input type="radio" name="level" id="expert" value="expert">
+                <label for="expert" class="opt">Expert</label>
+            </div>
+            <div class="submit">
+                <button type="submit" id="submit">JOGAR</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>

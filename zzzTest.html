@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forca</title>
+</head>
+
+<body>
+    <!-- 
+        TODOS INPUT TYPE="RADIO" TEM QUE TER A PROPRIEDADE NAME IGUAL UMA DA OUTRA.
+    -->
+    <div>
+        <label for="word">Digite a palavra secreta:</label>
+        <input type="text" id="word" placeholder="Ex: Livro">
+
+        <form action="" id="esc">
+            <div>
+                <input type="radio" name="fruit" value="orange" id="orange" class="op">
+                <label for="orange">orange</label>
+            </div>
+            <div>
+                <input type="radio" name="fruit" value="apple" id="apple" class="op">
+                <label for="apple">apple</label>
+            </div>
+            <div>
+                <input type="radio" name="fruit" value="banana" id="banana" class="op">
+                <label for="banana">banana</label>
+            </div>
+        </form>
+    </div>
+
+    <div class="re"></div>
+
+    <script>
+        var input = document.querySelectorAll(".op");
+        for (var i=0; i<input.length; i++){
+            input[i].addEventListener("click", function(e){
+                // re.innerHTML = document.querySelector("input:checked").value;
+                console.log(i);
+            });
+        }
+        
+        var chec = document.querySelector(".op:checked");
+        // console.log(chec.value);
+        var re = document.querySelector(".re");
+    </script>
+
+
+
+    <!-- <form action="">
+        <select name="opt" id="opt">
+            <option value="">Selecione um Estado</option>
+            <option value="Espirito Santo">Espirito Santo</option>
+            <option value="Minas Gerais">Minas Gerais</option>
+            <option value="Rio de Janeiro">Rio de Janeiro</option>
+            <option value="São Paulo">São Paulo</option>
+        </select>
+    </form>
+
+    <div class="res"></div> -->
+
+
+    <!-- <script>
+        var opt = document.querySelector("#opt");
+        opt.addEventListener("click", function(){
+            res.innerHTML = opt.value;
+        });
+        var res = document.querySelector(".res");
+    </script> -->
+
+</body>
+</html>

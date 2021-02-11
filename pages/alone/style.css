@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #222;
+    color: #fff;
+}
+
+.container{
+    height: 400px;
+    width: 400px;
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    margin: 0 10%;
+}
+
+form{
+    margin: 20px 10px 0;
+}
+
+label{
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.opt{
+    font-size: 22px;
+}
+
+#select{
+    font-size: 18px;
+    width: 300px;
+    height: 40px;
+    outline: none;
+    background-color: #444;
+    border-bottom: 1px solid red;
+    color: #fff;
+    margin: 10px 0;
+}
+#select:focus{
+    border-bottom:1px solid deepskyblue;
+}
+
+div{
+    margin: 5px 0;
+}
+
+.submit{
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+#submit{
+    font-size: 32px;
+    background-color: #3e4c4d;
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    transition: all ease-in-out 0.2s;
+    outline: none;
+}
+#submit:hover{
+    transform: translateY(-2px);
+    background-color: #496164;
+    box-shadow: 5px 5px #3e4c4d;
+
+}
+
+
+@media screen and (max-width: 500px){
+    .container{
+        width: 80%;
+    }
+
+    @media screen and (max-width: 412px){
+        .textLevel{
+            font-size: 22px;
+        }
+        .opt{
+            font-size: 20px;
+        }
+        @media screen and (max-width: 400px){
+            #select{
+                width: 100%;
+            }
+            
+
+            @media screen and (max-width: 380px){
+                .textLevel{
+                    font-size: 20px;
+                }
+                .opt{
+                    font-size: 18px;
+                }
+
+                @media screen and (max-width: 348px){
+                    .textLevel{
+                        font-size: 18px;
+                    }
+                    .opt{
+                        font-size: 16px;
+                    }
+                    #select{
+                        font-size: 16px;
+                        height: 35px;
+                    }
+                    .wordTitle{
+                        font-size: 22px;
+                    }
+
+                    @media screen and (max-width: 316px){
+                        form{
+                            margin: 0 10px;
+                        }
+                        .wordTitle{
+                            font-size: 20px;
+                        }
+                        .submit{
+                            margin: 20px 0;
+                        }
+                        #submit{
+                            font-size: 28px;
+                        }
+
+                        @media screen and (max-width: 269px){
+                            .submit{
+                                margin: 10px 0;
+                            }
+                            #submit{
+                                font-size: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
