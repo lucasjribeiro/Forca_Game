@@ -136,8 +136,9 @@ function teste(le){
     
     else{
         letrasErradas.push(le);
-        if (tentativas - letrasErradas.length <= 1)
+        if (tentativas - letrasErradas.length <= 1){
             restante.innerHTML = `Resta ${tentativas - letrasErradas.length} tentativa`;
+            restante.style.background = "firebrick"}
         else
             restante.innerHTML = `Restam ${tentativas - letrasErradas.length} tentativas`;
         console.log(letrasErradas);

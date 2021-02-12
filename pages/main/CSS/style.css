@@ -20,10 +20,9 @@ body{
     margin: 0 10%;
 }
 
-.div_restante_erro{}
-.div_perso_palavra{}
-.div_letter{}
-
+.child_container{
+    height: 200px;
+}
 
 .perso{
     width: 200px;
@@ -31,45 +30,99 @@ body{
     background-color: aquamarine;
     display: inline-block;
 }
-
 span{
     background-color: #fff;
 
 }
 
 
-
-
-
-
-
-
-
-
-
-
+.div_content_restante_erro{
+    height: 100px;
+    width: 600px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
 p{
-    display: inline-block;
     position: absolute;
-    top: 50px;
-    margin-left: 35px;
+    top: 20px;
+    left: 50px;
     font-size: 20px;
+    padding: 10px;
+    background-color: blue;
+    border-radius: 10px 10px 0 0;
+}
+
+.restante{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 40px;
+    padding: 5px;
+    font-size: 20px;
+    background-color: green;
+    opacity: .8;
+    border-radius: 10px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
 }
 
 .erroLetra{
-    width: 550px;
-    height: 50px;
-    background-color: antiquewhite;
-    display: inline-block;
+    width: 500px;
+    height: 40px;
+    background-color: blue;
     position: absolute;
-    top: 100px;
-    right: 20px;
+    top: 60px;
+    left: 50px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 0 10px 10px;
+    display: flex;
+    align-items: center;
 }
 
-.letter{
-    display: inline-flex;
+
+.div_content_palavra{
+    height: 100px;
+    width: 600px;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.palavraEscondida{
+    width: 500px;
+    height: 50px;
+    background-color: deepskyblue;
+    border-radius: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.div_content_letter{
+    height: 200px;
+    display: flex;
     flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 input{
@@ -77,17 +130,21 @@ input{
     height: 50px;
     margin: 5px;
     cursor: pointer;
+    background-color: #3e4c4d;
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
+    color: #fff;
+    transition: all ease-in-out 0.2s;
+    outline: none;
+    font-weight: bolder;
+    font-size: 18px;
+}
+input:hover{
+    transform: translateY(-2px);
+    background-color: #496164;
+    box-shadow: 0 5px #3e4c4d;
 }
 
-.palavraEscondida{
-    width: 550px;
-    height: 50px;
-    background-color: antiquewhite;
-    display: inline-block;
-    margin-top: 70px;
-    margin-left: 100px;
-    font-size: 40px;
-}
 
 .add{
     position: absolute;
@@ -101,18 +158,3 @@ input{
     border-radius: 10px;
 }
 
-.restante{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 30px;
-    right: 20px;
-    width: 180px;
-    height: 40px;
-    padding: 5px;
-    font-size: 20px;
-    background-color: greenyellow;
-    opacity: .8;
-    border-radius: 10px;
-}
