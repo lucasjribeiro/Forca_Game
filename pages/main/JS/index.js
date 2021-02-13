@@ -150,8 +150,9 @@ function teste(le){
                 if (confirm("Você Perdeu. Para continuar com a mesma palavra pressione OK.\nOu pressione Cancelar para iniciar um novo jogo.")){
                     add.innerHTML = "";
                     add.style.transform = "translate(0, 0px)";
-                    tentativas++;
-                    restante.innerHTML = `Resta ${tentativas - letrasErradas.length} tentativa`;
+                    tentativas += 2;
+                    restante.style.background = "green";
+                    restante.innerHTML = `Restam ${tentativas - letrasErradas.length} tentativas`;
                 }
                 else{
                     resetDelay(0);
