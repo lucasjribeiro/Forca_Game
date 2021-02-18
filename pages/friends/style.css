@@ -7,6 +7,12 @@
 body{
     background: #222;
     color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 
 .container{
@@ -14,10 +20,7 @@ body{
     width: 400px;
     border: 1px solid deepskyblue;
     border-radius: 10px;
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    margin: 0 10%;
+    margin: 1% 10%;
 }
 
 form{

@@ -7,6 +7,12 @@
 body{
     background: #222;
     color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 
 .container{
@@ -14,10 +20,8 @@ body{
     width: 800px;
     border: 1px solid deepskyblue;
     border-radius: 10px;
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    margin: 0 10%;
+    margin: 1% 10%;
+    position: relative;
 }
 
 .child_container{
@@ -31,57 +35,105 @@ body{
     display: inline-block;
     position: relative;
 }
-span{
+.perso span,
+.perso div{
     background-color: #fff;
 }
 .head{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     position: absolute;
-    top: 10px;
+    bottom: 110px;
     left: 50%;
     transform: translateX(-50%);
 }
 .trunk{
-    width: 40px;
-    height: 60px;
+    width: 30px;
+    height: 50px;
     position: absolute;
-    top: 55px;
+    bottom: 55px;
     left: 50%;
     transform: translateX(-50%);
 }
 .leftArm{
-    width: 14px;
-    height: 50px;
+    width: 10px;
+    height: 40px;
     position: absolute;
-    top: 50px;
-    left: 25%;
+    bottom: 70px;
+    left: 31%;
     transform: rotate(40deg);
 }
 .rightArm{
-    width: 14px;
-    height: 50px;
+    width: 10px;
+    height: 40px;
     position: absolute;
-    top: 50px;
-    left: 68%;
+    bottom: 70px;
+    right: 31%;
     transform: rotate(-40deg);
 }
 .leftLeg{
-    width: 16px;
-    height: 60px;
+    width: 12px;
+    height: 50px;
     position: absolute;
-    top: 120px;
-    left: 37%;
+    bottom: 0;
+    left: 40%;
     transform: rotate(10deg);
 }
 .rightLeg{
-    width: 16px;
-    height: 60px;
+    width: 12px;
+    height: 50px;
     position: absolute;
-    top: 120px;
-    left: 55%;
+    bottom: 0;
+    right: 40%;
     transform: rotate(-10deg);
+}
+
+.vertic{
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    width: 16px;
+    height: 165px;
+}
+.horizon{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 100px;
+    height: 15px;
+}
+.perso .track{
+    position: absolute;
+    background-color: red;
+    top: 0;
+    right: 18px;
+    width: 2px;
+    height: 16px;
+}
+.track::before,
+.track::after{
+    content: "";
+    position: absolute;
+    background-color: red;
+    top: 0;
+    width: 2px;
+    height: 16px;
+    transform: rotate(-6deg);
+}
+.track::before{
+    right: 6px;
+}
+.track::after{
+    left: 6px;
+}
+.perso .linehead{
+    position: absolute;
+    background: red;
+    top: 35px;
+    left: 100px;
+    width: 2px;
+    height: 25px;
 }
 
 
