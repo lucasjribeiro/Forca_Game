@@ -1,3 +1,5 @@
+import { levelFacil, levelMedio, levelDificil, levelExpert } from './person_body.js';
+
 var input = document.querySelectorAll("input");
 
 var a = input[0];
@@ -60,14 +62,23 @@ var palavra = sessionStorage.word.toUpperCase();
 
 var tentativas;
 var nivel = sessionStorage.opt;
-if (nivel === "level=facil")
+var dificult;
+if (nivel === "level=facil"){
     tentativas = 10;
-else if (nivel === "level=medio")
+    dificult = levelFacil;
+}
+else if (nivel === "level=medio"){
     tentativas = 7;
-else if (nivel === "level=dificil")
+    dificult = levelMedio;
+}
+else if (nivel === "level=dificil"){
     tentativas = 4;
-else
+    dificult = levelDificil;
+}
+else{
     tentativas = 2;
+    dificult = levelExpert;
+}
 
 var restante = document.querySelector(".restante");
 restante.innerHTML = `Restam ${tentativas} tentativas`;
@@ -83,7 +94,7 @@ for (var i=0; i<indexPalavra.length; i++){
     indexPalavra[i] = "_";
 }
 
-console.log(indexPalavra);
+// console.log(indexPalavra);
 
 var letrasErradas = Array();
 
@@ -123,28 +134,29 @@ function teste(le){
         for (var i=0; i<palavra.length; i++){
             if (palavra[i] === le){
                 indexPalavra[i] = le;
-                console.log(indexPalavra);
+                // console.log(indexPalavra);
             }
         }
         palavraEscondida.innerHTML = indexPalavra.join(" ");
         if (palavra === indexPalavra.join("")){
-            console.log("VOCÊ GANHOU !!!");
+            // console.log("VOCÊ GANHOU !!!");
             Ganhou();
             resetDelay(2000);
         }
     }
     
     else{
+        dificult(0);
         letrasErradas.push(le);
         if (tentativas - letrasErradas.length <= 1){
             restante.innerHTML = `Resta ${tentativas - letrasErradas.length} tentativa`;
             restante.style.background = "firebrick"}
         else
             restante.innerHTML = `Restam ${tentativas - letrasErradas.length} tentativas`;
-        console.log(letrasErradas);
+        // console.log(letrasErradas);
         erro.innerHTML = letrasErradas.join(" ");
         if (letrasErradas.length >= tentativas){
-            console.log("VOCÊ PERDEU !!!");
+            // console.log("VOCÊ PERDEU !!!");
             Perdeu();
             setTimeout(function(){
                 if (confirm("Você Perdeu. Para continuar com a mesma palavra pressione OK.\nOu pressione Cancelar para iniciar um novo jogo.")){
@@ -153,6 +165,8 @@ function teste(le){
                     tentativas += 2;
                     restante.style.background = "green";
                     restante.innerHTML = `Restam ${tentativas - letrasErradas.length} tentativas`;
+                    document.querySelector(".rightLeg").style.visibility = "hidden";
+                    dificult(1);
                 }
                 else{
                     resetDelay(0);

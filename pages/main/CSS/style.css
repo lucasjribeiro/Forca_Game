@@ -47,6 +47,37 @@ body::-webkit-scrollbar{
     bottom: 110px;
     left: 50%;
     transform: translateX(-50%);
+    visibility: hidden;
+}
+.head .leftEye{
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    width: 6px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: blue;
+    visibility: hidden;
+}
+.head .rightEye{
+    position: absolute;
+    right: 6px;
+    top: 10px;
+    width: 6px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: blue;
+    visibility: hidden;
+}
+.head .mounth{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    width: 10px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: blue;
+    visibility: hidden;
 }
 .trunk{
     width: 30px;
@@ -55,6 +86,7 @@ body::-webkit-scrollbar{
     bottom: 55px;
     left: 50%;
     transform: translateX(-50%);
+    visibility: hidden;
 }
 .leftArm{
     width: 10px;
@@ -63,6 +95,7 @@ body::-webkit-scrollbar{
     bottom: 70px;
     left: 31%;
     transform: rotate(40deg);
+    visibility: hidden;
 }
 .rightArm{
     width: 10px;
@@ -71,6 +104,7 @@ body::-webkit-scrollbar{
     bottom: 70px;
     right: 31%;
     transform: rotate(-40deg);
+    visibility: hidden;
 }
 .leftLeg{
     width: 12px;
@@ -79,6 +113,7 @@ body::-webkit-scrollbar{
     bottom: 0;
     left: 40%;
     transform: rotate(10deg);
+    visibility: hidden;
 }
 .rightLeg{
     width: 12px;
@@ -87,6 +122,7 @@ body::-webkit-scrollbar{
     bottom: 0;
     right: 40%;
     transform: rotate(-10deg);
+    visibility: hidden;
 }
 
 .vertic{
@@ -270,4 +306,3 @@ input:hover{
     opacity: .8;
     border-radius: 10px;
 }
-
