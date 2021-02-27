@@ -5,7 +5,7 @@
 }
 
 body{
-    background: #222;
+    background-image: linear-gradient(90deg, #000 0%, #111 70%, #222 100%);
     color: #fff;
     min-height: 100vh;
     display: flex;
@@ -14,6 +14,8 @@ body{
 body::-webkit-scrollbar{
     display: none;
 }
+
+
 
 .container{
     height: 400px;
@@ -26,120 +28,42 @@ body::-webkit-scrollbar{
 
 .child_container{
     height: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.perso{
-    width: 200px;
-    height: 200px;
-    background-color: aquamarine;
+.perso_box{
+    width: 190px;
+    height: 190px;
+    background-color: rgb(35, 86, 104);
     display: inline-block;
     position: relative;
+    border-radius: 20px;
+    margin: 10px 0 0 10px;
 }
-.perso span,
-.perso div{
-    background-color: #fff;
-}
-.head{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 110px;
-    left: 50%;
-    transform: translateX(-50%);
-    visibility: hidden;
-}
-.head .leftEye{
-    position: absolute;
-    left: 6px;
-    top: 10px;
-    width: 6px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: blue;
-    visibility: hidden;
-}
-.head .rightEye{
-    position: absolute;
-    right: 6px;
-    top: 10px;
-    width: 6px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: blue;
-    visibility: hidden;
-}
-.head .mounth{
-    position: absolute;
-    left: 10px;
-    top: 20px;
-    width: 10px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: blue;
-    visibility: hidden;
-}
-.trunk{
-    width: 30px;
-    height: 50px;
-    position: absolute;
-    bottom: 55px;
-    left: 50%;
-    transform: translateX(-50%);
-    visibility: hidden;
-}
-.leftArm{
-    width: 10px;
-    height: 40px;
-    position: absolute;
-    bottom: 70px;
-    left: 31%;
-    transform: rotate(40deg);
-    visibility: hidden;
-}
-.rightArm{
-    width: 10px;
-    height: 40px;
-    position: absolute;
-    bottom: 70px;
-    right: 31%;
-    transform: rotate(-40deg);
-    visibility: hidden;
-}
-.leftLeg{
-    width: 12px;
-    height: 50px;
-    position: absolute;
-    bottom: 0;
-    left: 40%;
-    transform: rotate(10deg);
-    visibility: hidden;
-}
-.rightLeg{
-    width: 12px;
-    height: 50px;
-    position: absolute;
-    bottom: 0;
-    right: 40%;
-    transform: rotate(-10deg);
-    visibility: hidden;
+.perso_box span,
+.perso_box div{
+    background-color: rgb(255, 207, 104);
 }
 
-.vertic{
+.perso_box .vertic{
     position: absolute;
-    left: 20px;
-    bottom: 0;
+    left: 34px;
+    bottom: 10px;
     width: 16px;
-    height: 165px;
+    height: 155px;
+    background-color: #a55800;
 }
-.horizon{
+.perso_box .horizon{
     position: absolute;
-    left: 20px;
-    top: 20px;
+    left: 34px;
+    top: 10px;
     width: 100px;
     height: 15px;
+    background-color: #a55800;
 }
-.perso .track{
+.perso_box .track{
     position: absolute;
     background-color: red;
     top: 0;
@@ -163,28 +87,115 @@ body::-webkit-scrollbar{
 .track::after{
     left: 6px;
 }
-.perso .linehead{
+
+.perso_box .linehead{
     position: absolute;
     background: red;
-    top: 35px;
-    left: 100px;
+    top: 25px;
+    left: 114px;
     width: 2px;
     height: 25px;
 }
 
+.head{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 115px;
+    left: 60%;
+    transform: translateX(-50%);
+    visibility: hidden;
+}
+.head .leftEye{
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    width: 6px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #111;
+    visibility: hidden;
+}
+.head .rightEye{
+    position: absolute;
+    right: 6px;
+    top: 10px;
+    width: 6px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #111;
+    visibility: hidden;
+}
+.head .mounth{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    width: 10px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgb(255, 123, 0);
+    visibility: hidden;
+}
+.perso_box .trunk{
+    width: 30px;
+    height: 45px;
+    position: absolute;
+    bottom: 65px;
+    left: 60%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    background-color: #38e247;
+}
+.leftArm{
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    bottom: 70px;
+    left: 41%;
+    transform: rotate(30deg);
+    visibility: hidden;
+}
+.rightArm{
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    bottom: 70px;
+    right: 21%;
+    transform: rotate(-30deg);
+    visibility: hidden;
+}
+.leftLeg{
+    width: 12px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: rotate(8deg);
+    visibility: hidden;
+}
+.rightLeg{
+    width: 12px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    right: 30%;
+    transform: rotate(-8deg);
+    visibility: hidden;
+}
+
+
 
 .div_content_restante_erro{
     height: 120px;
-    width: 600px;
-    position: absolute;
-    top: 0;
-    right: 0;
+    width: 598px;
+    position: relative;
 }
 
 p{
     position: absolute;
-    top: 37px;
-    left: 50px;
+    top: 40px;
+    left: 8.19%;
     font-size: 20px;
     padding: 10px;
     background-color: blue;
@@ -195,12 +206,10 @@ p{
 }
 
 .restante{
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 40px;
-    padding: 5px;
+    padding: 10px;
     font-size: 20px;
     background-color: darkgreen;
     border-radius: 10px;
@@ -215,24 +224,22 @@ p{
     background-color: blue;
     position: absolute;
     top: 80px;
-    left: 50px;
-    font-size: 24px;
+    left: 8.19%;
+    font-size: 20px;
     padding: 10px;
     border-radius: 0 10px 10px;
     display: flex;
     align-items: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-shadow: 2px 1px #000;
 }
 
 
+
 .div_content_palavra{
     height: 80px;
-    width: 600px;
-    position: absolute;
-    right: 0;
-    top: 120px;
+    width: 598px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -254,15 +261,8 @@ p{
 
 
 
-
-
-
-
-
-
-
 .div_content_letter{
-    height: 200px;
+    height: 198px;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -286,13 +286,13 @@ input{
                 inset -4px 0px #666,
                 inset 0px -4px #666,
                 inset 4px 0px #666;
-
 }
 input:hover{
     transform: translateY(-2px);
     background-color: #496164;
     box-shadow: 0 6px #3e4c4d;
 }
+
 
 
 .add{
@@ -305,4 +305,124 @@ input:hover{
     transition: ease-in-out 1s;
     opacity: .8;
     border-radius: 10px;
+}
+
+
+
+@media screen and (max-width: 1000px){
+    .div_content_restante_erro,
+    .div_content_palavra{
+        width: calc(100% - 200px);
+    }
+    .erroLetra,
+    .palavraEscondida{
+        width: 83.62%;
+    }
+    .palavraEscondida{
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: 900px){
+        body{
+            justify-content: center;
+        }
+        .container{
+            margin: 1% 1%;
+        }
+        p{
+            font-size: 18px;
+        }
+        .restante{
+            font-size: 18px;
+        }
+        .erroLetra{
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 750px) and (min-width: 638px){
+            .palavraEscondida{
+                font-size: 25px;
+            }
+            .erroLetra{
+                letter-spacing: 0;
+            }
+        }
+
+        @media screen and (max-width: 638px){
+            body{
+                background-image: linear-gradient(0deg, #000 0%, #111 70%, #222 100%);
+            }
+            .container{
+                height: 638px;
+            }
+            .child_container{
+                flex-direction: row;
+                justify-content: center;
+                height: 400px;
+            }
+            .perso_box{
+                margin-left: 0;
+            }
+            .div_content_restante_erro{
+                width: 100%;
+            }
+            .div_content_palavra{
+                width: 100%;
+            }
+            .div_content_letter{
+                height: 236px;
+            }
+
+            @media screen and (max-width: 553px){
+                input{
+                    width: 45px;
+                    height: 45px;
+                    margin: 2px;
+                }
+                .palavraEscondida{
+                    font-size: 25px;
+                }
+                .erroLetra{
+                    letter-spacing: -1px;
+                }
+
+                @media screen and (max-width: 400px){
+                    p{
+                        top: 45px;
+                    }
+                    .erroLetra{
+                        width: 98%;
+                    }
+                    p,
+                    .erroLetra{
+                        left: 1%;
+                    }
+                    .restante{
+                        right: 1%;
+                        padding: 8px;
+                    }
+                    .palavraEscondida{
+                        width: 98%;
+                        font-size: 22px;
+                    }
+
+                    @media screen and (max-width: 352px){
+                        input{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        .erroLetra{
+                            font-size: 16px;
+                        }
+                        .palavraEscondida{
+                            font-size: 20px;
+                        }
+                        .restante{
+                            top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

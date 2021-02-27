@@ -58,7 +58,41 @@ z.addEventListener("click", function(){ teste("Z"); });
 
 
 
-var palavra = sessionStorage.word.toUpperCase();
+var palavra = sessionStorage.word.toUpperCase().trim();
+console.log(palavra.trim());
+
+
+/* ================== TESTE ================== /
+var palavra = "      lucas jose ribeiro     ";
+palavra =  palavra.trim();
+var posIndex = [];
+for (var i=0; i<palavra.length; i++){
+    if (palavra[i] === " "){
+        posIndex.push(i);
+    }
+}
+console.log(posIndex);
+var newlist = [];
+for(var i of palavra){
+    newlist.push("_");
+}
+for (var i=0; i<posIndex.length; i++){
+    newlist[posIndex[i]] = "a";
+}
+console.log(newlist);
+
+// ===================================== //
+var res = [];
+var nome  = "lacas amor ";
+for (var i=0; i<nome.length; i++){
+    if (nome[i] === "a"){
+        res.push(nome[i]);
+    }
+}
+console.log(res.length);
+/* ================== TESTE ================== */
+
+
 
 var tentativas;
 var nivel = sessionStorage.opt;
