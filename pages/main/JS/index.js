@@ -2,100 +2,54 @@ import { levelFacil, levelMedio, levelDificil, levelExpert } from './person_body
 
 var input = document.querySelectorAll("input");
 
-var a = input[0];
-var b = input[1];
-var c = input[2];
-var d = input[3];
-var e = input[4];
-var f = input[5];
-var g = input[6];
-var h = input[7];
-var i = input[8];
-var j = input[9];
-var k = input[10];
-var l = input[11];
-var m = input[12];
-var n = input[13];
-var o = input[14];
-var p = input[15];
-var q = input[16];
-var r = input[17];
-var s = input[18];
-var t = input[19];
-var u = input[20];
-var v = input[21];
-var w = input[22];
-var x = input[23];
-var y = input[24];
-var z = input[25];
-
-a.addEventListener("click", function(){ teste("A"); });
-b.addEventListener("click", function(){ teste("B"); });
-c.addEventListener("click", function(){ teste("C"); });
-d.addEventListener("click", function(){ teste("D"); });
-e.addEventListener("click", function(){ teste("E"); });
-f.addEventListener("click", function(){ teste("F"); });
-g.addEventListener("click", function(){ teste("G"); });
-h.addEventListener("click", function(){ teste("H"); });
-i.addEventListener("click", function(){ teste("I"); });
-j.addEventListener("click", function(){ teste("J"); });
-k.addEventListener("click", function(){ teste("K"); });
-l.addEventListener("click", function(){ teste("L"); });
-m.addEventListener("click", function(){ teste("M"); });
-n.addEventListener("click", function(){ teste("N"); });
-o.addEventListener("click", function(){ teste("O"); });
-p.addEventListener("click", function(){ teste("P"); });
-q.addEventListener("click", function(){ teste("Q"); });
-r.addEventListener("click", function(){ teste("R"); });
-s.addEventListener("click", function(){ teste("S"); });
-t.addEventListener("click", function(){ teste("T"); });
-u.addEventListener("click", function(){ teste("U"); });
-v.addEventListener("click", function(){ teste("V"); });
-w.addEventListener("click", function(){ teste("W"); });
-x.addEventListener("click", function(){ teste("X"); });
-y.addEventListener("click", function(){ teste("Y"); });
-z.addEventListener("click", function(){ teste("Z"); });
+input[0].addEventListener("click", function(){ teste(["A","Á","À","Â","Ã"]); });
+input[1].addEventListener("click", function(){ teste("B"); });
+input[2].addEventListener("click", function(){ teste(["C","Ç"]); });
+input[3].addEventListener("click", function(){ teste("D"); });
+input[4].addEventListener("click", function(){ teste(["E","É","È","Ê"]); });
+input[5].addEventListener("click", function(){ teste("F"); });
+input[6].addEventListener("click", function(){ teste("G"); });
+input[7].addEventListener("click", function(){ teste("H"); });
+input[8].addEventListener("click", function(){ teste(["I","Í","Ì","Î"]); });
+input[9].addEventListener("click", function(){ teste("J"); });
+input[10].addEventListener("click", function(){ teste("K"); });
+input[11].addEventListener("click", function(){ teste("L"); });
+input[12].addEventListener("click", function(){ teste("M"); });
+input[13].addEventListener("click", function(){ teste(["N","Ñ"]); });
+input[14].addEventListener("click", function(){ teste(["O","Ó","Ò","Ô","Õ"]); });
+input[15].addEventListener("click", function(){ teste("P"); });
+input[16].addEventListener("click", function(){ teste("Q"); });
+input[17].addEventListener("click", function(){ teste("R"); });
+input[18].addEventListener("click", function(){ teste("S"); });
+input[19].addEventListener("click", function(){ teste("T"); });
+input[20].addEventListener("click", function(){ teste(["U","Ú","Ù","Û"]); });
+input[21].addEventListener("click", function(){ teste("V"); });
+input[22].addEventListener("click", function(){ teste("W"); });
+input[23].addEventListener("click", function(){ teste("X"); });
+input[24].addEventListener("click", function(){ teste("Y"); });
+input[25].addEventListener("click", function(){ teste("Z"); });
 
 
 
 var palavra = sessionStorage.word.toUpperCase().trim();
-console.log(palavra.trim());
 
-
-/* ================== TESTE ================== /
-var palavra = "      lucas jose ribeiro     ";
-palavra =  palavra.trim();
 var posIndex = [];
+var newWordDash = [];
 for (var i=0; i<palavra.length; i++){
     if (palavra[i] === " "){
         posIndex.push(i);
     }
+    newWordDash[i] = "_";
 }
-console.log(posIndex);
-var newlist = [];
-for(var i of palavra){
-    newlist.push("_");
-}
+
 for (var i=0; i<posIndex.length; i++){
-    newlist[posIndex[i]] = "a";
+    newWordDash[posIndex[i]] = " ";
 }
-console.log(newlist);
-
-// ===================================== //
-var res = [];
-var nome  = "lacas amor ";
-for (var i=0; i<nome.length; i++){
-    if (nome[i] === "a"){
-        res.push(nome[i]);
-    }
-}
-console.log(res.length);
-/* ================== TESTE ================== */
 
 
 
-var tentativas;
 var nivel = sessionStorage.opt;
+var tentativas;
 var dificult;
 if (nivel === "level=facil"){
     tentativas = 10;
@@ -120,15 +74,7 @@ restante.innerHTML = `Restam ${tentativas} tentativas`;
 var erro = document.querySelector(".erroLetra");
 
 var palavraEscondida = document.querySelector(".palavraEscondida");
-palavraEscondida.innerHTML = " _ ".repeat(palavra.length);
-
-var indexPalavra = Array(palavra.length);
-
-for (var i=0; i<indexPalavra.length; i++){
-    indexPalavra[i] = "_";
-}
-
-// console.log(indexPalavra);
+palavraEscondida.innerHTML = newWordDash.join("");
 
 var letrasErradas = Array();
 
@@ -163,25 +109,25 @@ function resetDelay(miliseg){
 
 
 function teste(le){
-    // palavra = palavra.normalize("NFD");
-    if (palavra.includes(le)){
-        for (var i=0; i<palavra.length; i++){
-            if (palavra[i] === le){
-                indexPalavra[i] = le;
-                // console.log(indexPalavra);
+    var match = false;
+    for (var i=0; i<palavra.length; i++){
+        for (var j=0; j<le.length; j++){
+            if (palavra[i] === le[j]){
+                newWordDash[i] = le[j];
+                palavraEscondida.innerHTML = newWordDash.join("");
+                if (palavra === newWordDash.join("")){
+                    // console.log("VOCÊ GANHOU !!!");
+                    Ganhou();
+                    resetDelay(2000);
+                }
+                match = true;
             }
         }
-        palavraEscondida.innerHTML = indexPalavra.join(" ");
-        if (palavra === indexPalavra.join("")){
-            // console.log("VOCÊ GANHOU !!!");
-            Ganhou();
-            resetDelay(2000);
-        }
     }
-    
-    else{
+
+    if (match === false){
         dificult(0);
-        letrasErradas.push(le);
+        letrasErradas.push(le[0]);
         if (tentativas - letrasErradas.length <= 1){
             restante.innerHTML = `Resta ${tentativas - letrasErradas.length} tentativa`;
             restante.style.background = "firebrick"}
